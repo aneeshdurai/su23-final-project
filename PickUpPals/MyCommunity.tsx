@@ -62,13 +62,9 @@ const MyCommunity = ({navigation}) => {
     
     const pseudoPeople = [
         { id: '1', name: 'Ben Bitdiddle', location: 'New York' },
-        { id: '2', name: 'Aneesh Durai', location: 'Los Angeles' },
-        { id: '3', name: 'Durai Aneesh', location: 'Chicago' },
-        { id: '3', name: 'Durai Ben', location: 'Chicago' },
-        { id: '3', name: 'Bitdiddle Bitdiddle', location: 'Chicago' },
-        { id: '3', name: 'Ben Bitdiddle', location: 'Chicago' },
-        { id: '3', name: 'Ben Bitdiddle', location: 'Chicago' },
-        { id: '3', name: 'Ben Bitdiddle', location: 'Chicago' }
+        { id: '2', name: 'Ben Bitdiddle', location: 'Chicago' },
+        { id: '3', name: 'Ben Bitdiddle', location: 'Los Angeles' },
+        { id: '4', name: 'Ben Bitdiddle', location: 'San Francisco' }
         // ... add as many people as you'd like
     ];
     useEffect(() => {
@@ -180,7 +176,7 @@ const MyCommunity = ({navigation}) => {
               <View style={styles.modalView} onStartShouldSetResponder={() => true}>
                   <Text style={styles.modalText}>My Profile</Text>
                   <Text style={styles.modalText}>My Games</Text>
-                  <TouchableOpacity onPress={() => navigation.navigate("MyCommunity")}>
+                  <TouchableOpacity onPress={() => navigation.navigate("MyGames")}>
                     <Text style={styles.link}>My Community</Text>
                 </TouchableOpacity>
                   <Text style={styles.modalText}>My Settings</Text>

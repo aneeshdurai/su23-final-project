@@ -9,10 +9,9 @@ const Navbar = ({ title, backButton, buttons }) => {
     <View style={styles.container}>
       {backButton && (
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <Text style={styles.backButtonText}>{'< Back'}</Text>
+          <Text style={styles.backButtonText}>{'←'}</Text>
         </TouchableOpacity>
       )}
-      <Text style={styles.title}>{title}</Text>
       <View style={styles.buttonsContainer}>
         {buttons.map((button) => (
           <TouchableOpacity

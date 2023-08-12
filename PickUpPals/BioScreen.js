@@ -19,6 +19,7 @@ const RegisterScreen = ({ navigation }) => {
   const [error, setError] = useState("");
   const [bio, setBio] = useState({ value: "", error: "" });
 
+  
 
   const _onSignUpPressed = async () => {
     navigation.navigate("CreateGameScreen");
@@ -79,7 +80,6 @@ const RegisterScreen = ({ navigation }) => {
         onChangeText={text => setPassword({ value: text, error: "" })}
         error={!!password.error}
         errorText={password.error}
-        secureTextEntry
         autoCapitalize="none"
       />
 

@@ -17,10 +17,14 @@ import { getApp, initializeApp } from "firebase/app";
 import Logs from "./components/small_log";
 import TextDropdown from "./components/TextDropdown";
 import { Picker } from "@react-native-picker/picker";
+import Navbar from "./Navbar";
 
 
 const CreateGameScreen = ({navigation}) => {
 
+    const navbarButtons = [
+      { title: 'Home', screen: 'StartScreen' }
+    ];
     const [name, setName] = useState({ value: "", error: "" });
     const [successModalVisible, setSuccessModalVisible] = useState(false);
 
@@ -162,10 +166,10 @@ const CreateGameScreen = ({navigation}) => {
               <View style={styles.modalView} onStartShouldSetResponder={() => true}>
                   <Text style={styles.modalText}>My Profile</Text>
                   <TouchableOpacity onPress={() => navigation.navigate("MyGames")}>
-                    <Text style={styles.link}>My Games</Text>
+                    <Text style={styles.modalText}>My Games</Text>
                 </TouchableOpacity>
                   <TouchableOpacity onPress={() => navigation.navigate("MyCommunity")}>
-                    <Text style={styles.link}>My Community</Text>
+                    <Text style={styles.modalText}>My Community</Text>
                 </TouchableOpacity>
                   <Text style={styles.modalText}>My Settings</Text>
                   <Text style={styles.modalText}>Log Out</Text>
@@ -177,7 +181,7 @@ const CreateGameScreen = ({navigation}) => {
 
 
 
-
+            <Navbar title = "Title" backButton buttons={navbarButtons} />
             <View style={{ position: 'absolute', top: 0, left: 0 }}>
             <Logs />
             </View>
@@ -232,7 +236,7 @@ const CreateGameScreen = ({navigation}) => {
                 label="Location"
                 returnKeyType="next"
                 value={location.value}
-                onChangeText={text => setLocation({ value: capitalizeFirstLetter(text), error: "" })}
+                onChangeText={text => setLocation({ value: text, error: "" })}
                 error={!!location.error}
                 errorText={location.error}
             />

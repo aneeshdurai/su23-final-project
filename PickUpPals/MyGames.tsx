@@ -17,9 +17,13 @@ import { getApp, initializeApp } from "firebase/app";
 import { FlatList} from "react-native";
 import { Card } from "react-native-paper";
 import Logs from "./components/small_log";
+import Navbar from "./Navbar";
 
 const MyGames = ({navigation}) => {
 
+    const navbarButtons = [
+      { title: 'Home', screen: 'StartScreen' }
+    ];
     const [name, setName] = useState({ value: "", error: "" });
     const [location, setLocation] = useState({ value: "", error: "" });
     const auth = getAuth();
@@ -59,8 +63,8 @@ const MyGames = ({navigation}) => {
         return (
           <Card style={styles.card}>
             <Card.Title
-              title={`${item.sport} at ${item.location}`}
-              subtitle={`${item.time} on ${item.date}`}
+              title={`${item.sport}`}
+              subtitle={`${item.time} on ${item.date} at ${item.location}`}
             />
             <Card.Actions>
                 <Button
@@ -79,6 +83,7 @@ const MyGames = ({navigation}) => {
 
     return (
         <Background>
+            <Navbar title = "Title" backButton buttons={navbarButtons} />
             <View style={{ position: 'absolute', top: 0, left: 0 }}>
             <Logs />
             </View>

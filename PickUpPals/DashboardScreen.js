@@ -26,7 +26,9 @@ const DashboardScreen = ({ navigation }) => {
   for(let i = 18; i <= 120; i++) {
     ageOptions.push(<Picker.Item key={i} label={`${i}`} value={`${i}`} />);
   }
-
+  const capitalizeFirstLetter = (text) => {
+    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+  }; 
 
   const _onSignUpPressed = async () => {
     navigation.navigate("Bio");
@@ -78,7 +80,7 @@ const DashboardScreen = ({ navigation }) => {
         label="Name"
         returnKeyType="next"
         value={name.value}
-        onChangeText={text => setName({ value: text, error: "" })}
+        onChangeText={text => setName({ value: capitalizeFirstLetter(text), error: "" })}
         error={!!name.error}
         errorText={name.error}
       />
@@ -87,7 +89,7 @@ const DashboardScreen = ({ navigation }) => {
         label="City"
         returnKeyType="next"
         value={city.value}
-        onChangeText={text => setCity({ value: text, error: "" })}
+        onChangeText={text => setCity({ value: capitalizeFirstLetter(text), error: "" })}
         error={!!city.error}
         errorText={city.error}
       />
@@ -96,7 +98,7 @@ const DashboardScreen = ({ navigation }) => {
         label="Phone Number"
         returnKeyType="next"
         value={phoneNumber.value}
-        onChangeText={text => setPhoneNumber({ value: text, error: "" })}
+        onChangeText={text => setPhoneNumber({ value: capitalizeFirstLetter(text), error: "" })}
         error={!!phoneNumber.error}
         errorText={phoneNumber.error}
       />
