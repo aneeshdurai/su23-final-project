@@ -73,6 +73,7 @@ const DashboardScreen = ({ navigation }) => {
         <Picker.Item label="Expert" value="expert" />
       </Picker>
 
+
       <TextInput
         label="Name"
         returnKeyType="next"

@@ -12,7 +12,7 @@ import firebase from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { string } from "prop-types";
 
-const RegisterScreen = ({ navigation }) => {
+const StartScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -39,5 +39,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default memo(RegisterScreen);
+export default memo(StartScreen);
 

@@ -18,7 +18,7 @@ import Logs from "./components/small_log";
 import { Card } from "react-native-paper";
 
 
-const CreateGameScreen = ({navigation}) => {
+const MyCommunity = ({navigation}) => {
 
     const [name, setName] = useState({ value: "", error: "" });
     const [time, setTime] = useState({ value: "", error: "" });
@@ -276,4 +276,4 @@ const styles = StyleSheet.create({
       }
   });
 
-export default memo(CreateGameScreen);
+export default memo(MyCommunity);

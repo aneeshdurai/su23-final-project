@@ -17,16 +17,16 @@ const Stack = createStackNavigator();
 const AppNavigator = () => (
   <NavigationContainer>
     <Stack.Navigator initialRouteName="StartScreen">
-      <Stack.Screen name="Register" component={RegisterScreen} />
-      <Stack.Screen name="MyGames" component={MyGames} />
-      <Stack.Screen name="StartScreen" component={StartScreen} />
-      <Stack.Screen name="DashBoard" component={DashboardScreen} />
-      <Stack.Screen name="Bio" component={BioScreen} />
-      <Stack.Screen name="MyCommunity" component={MyCommunity} />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="CreateGameScreen" component={CreateGameScreen} />
-      <Stack.Screen name="SearchGameScreen" component={SearchGameScreen} />
-      <Stack.Screen name="ChatScreen" component={ChatScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="MyGames" component={MyGames} options={{ headerShown: false }}/>
+      <Stack.Screen name="StartScreen" component={StartScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="DashBoard" component={DashboardScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="Bio" component={BioScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="MyCommunity" component={MyCommunity} options={{ headerShown: false }}/>
+      <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="CreateGameScreen" component={CreateGameScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="SearchGameScreen" component={SearchGameScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   </NavigationContainer>
 );

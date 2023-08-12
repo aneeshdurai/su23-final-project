@@ -18,7 +18,7 @@ import Logs from "./components/small_log";
 import { Card } from "react-native-paper";
 
 
-const CreateGameScreen = ({navigation}) => {
+const PersonDetailScreen = ({navigation}) => {
 
     const [name, setName] = useState({ value: "", error: "" });
     const [time, setTime] = useState({ value: "", error: "" });
@@ -175,13 +175,17 @@ const CreateGameScreen = ({navigation}) => {
               onPressOut={() => setModalVisible(false)}
           >
               <View style={styles.modalView} onStartShouldSetResponder={() => true}>
+                <TouchableOpacity onPress={() => navigation.navigate("BioScreen")}>
                   <Text style={styles.modalText}>My Profile</Text>
+                  </TouchableOpacity>
                   <Text style={styles.modalText}>My Games</Text>
                   <TouchableOpacity onPress={() => navigation.navigate("MyCommunity")}>
                     <Text style={styles.link}>My Community</Text>
                 </TouchableOpacity>
                   <Text style={styles.modalText}>My Settings</Text>
+                  <TouchableOpacity onPress={() => navigation.navigate("StartScreen")}>
                   <Text style={styles.modalText}>Log Out</Text>
+                  </TouchableOpacity>
                   {/* Add more options here */}
               </View>
           </TouchableOpacity>
@@ -273,4 +277,4 @@ const styles = StyleSheet.create({
       }
   });
 
-export default memo(CreateGameScreen);
+export default memo(PersonDetailScreen);

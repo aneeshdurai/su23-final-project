@@ -55,12 +55,12 @@ const SearchGameScreen = ({navigation}) => {
 
     const renderGame = ({ item }: { item: Game }) => {
       console.log("Reached");
-      if (name.value == item.sport && location.value == item.location) {
+      if ((name.value.toLowerCase()) == (item.sport.toLowerCase()) && (item.location.toLowerCase()).includes(location.value.toLowerCase())) {
         return (
           <Card style={styles.card}>
             <Card.Title
               title={`${item.sport} at ${item.location}`}
-              subtitle={`${item.time} on ${item.date}`}
+              subtitle={`${item.time} on ${item.date}.`}
             />
             <Card.Actions>
                 <Button
@@ -81,6 +81,10 @@ const SearchGameScreen = ({navigation}) => {
         
     }
 
+    const capitalizeFirstLetter = (text) => {
+      return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    }; 
+
     return (
         <Background>
             <View style={{ position: 'absolute', top: 0, left: 0 }}>
@@ -91,15 +95,15 @@ const SearchGameScreen = ({navigation}) => {
                 label="Enter Sport"
                 returnKeyType="next"
                 value={name.value}
-                onChangeText={text => setName({ value: text, error: "" })}
+                onChangeText={text => setName({ value: capitalizeFirstLetter(text), error: "" })}
                 error={!!name.error}
                 errorText={name.error}
             />
             <TextInput
-                label="Location"
+                label="Location (City Name)"
                 returnKeyType="next"
                 value={location.value}
-                onChangeText={text => setLocation({ value: text, error: "" })}
+                onChangeText={text => setLocation({ value: capitalizeFirstLetter(text), error: "" })}
                 error={!!location.error}
                 errorText={location.error}
             />
