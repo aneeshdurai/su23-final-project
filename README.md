@@ -1,1 +1,1 @@
-# su23-final-project
+# PickUpPals
